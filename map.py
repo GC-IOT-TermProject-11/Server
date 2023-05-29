@@ -126,8 +126,6 @@ def get_shortest_path(previous, start_node, target_node):
 #         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
 
 
-
-
 def main():
     start_room = input("시작 노드(방)를 입력하세요: ")
     target_room = input("도착 노드(방)를 입력하세요: ")
@@ -151,22 +149,35 @@ def main():
 
         # 경로를 따라 방문하면서 해당 노드를 제거
         queue = deque(shortest_path)
+        first_node = queue[0]
+        prev_node = None
+        next_node = None
+        passed_node = None
         while queue:
-            current_node = queue.popleft()
+            current_node = queue[0]
             user_input = input(f"{current_node} 방을 방문하셨습니까? (방 번호 입력): ")
 
             if user_input == current_node:
-                print("방문한 노드:", current_node)
-                if queue:
-                    print("남은 경로:", " -> ".join(queue))
+                if len(queue) > 1:
+                    if user_input == first_node:
+                        next_node = queue[1]
+                        print("남은 경로:", " -> ".join(queue), "다음 노드: ", next_node)
+                    else:
+                        next_node = queue[1]
+                        prev_node = passed_node
+                        print("남은 경로:", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
+                else:
+                    prev_node = passed_node
+                    print("남은 경로:", " -> ".join(queue), "이전 노드: ", prev_node)
+                passed_node = current_node
+                if current_node == shortest_path[-1]:
+                    print("도착했습니다!")
             else:
                 print("방문하지 않았습니다.")
                 break
+            queue.popleft()
     else:
         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
-
-
-
 
 
 if __name__ == "__main__":
