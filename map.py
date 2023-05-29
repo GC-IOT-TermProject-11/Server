@@ -1,4 +1,5 @@
 import heapq
+from collections import deque
 
 
 def create_room_graph_4th_floor():
@@ -73,19 +74,58 @@ def dijkstra(graph, start_node):
     return distances, previous
 
 
-def get_shortest_path(previous, start_node, target_node):
-    path = []
-    current_node = target_node
+# def get_shortest_path(previous, start_node, target_node):
+#     path = []
+#     current_node = target_node
+#
+#     # 도착 노드에서 시작 노드까지 역순으로 이전 노드를 따라가며 경로 구성
+#     while current_node is not None:
+#         path.insert(0, current_node)
+#         current_node = previous[current_node]
+#
+#     if path[0] != start_node:
+#         return []  # 시작 노드에서 도착 노드까지의 경로가 없는 경우
+#
+#     return path
 
-    # 도착 노드에서 시작 노드까지 역순으로 이전 노드를 따라가며 경로 구성
+def get_shortest_path(previous, start_node, target_node):
+    path = deque()  # 경로를 저장하는 큐
+
+    current_node = target_node
     while current_node is not None:
-        path.insert(0, current_node)
+        path.appendleft(current_node)
         current_node = previous[current_node]
 
     if path[0] != start_node:
-        return []  # 시작 노드에서 도착 노드까지의 경로가 없는 경우
+        return deque()  # 시작 노드에서 도착 노드까지의 경로가 없는 경우
 
     return path
+
+
+# def main():
+#     start_room = input("시작 노드(방)를 입력하세요: ")
+#     target_room = input("도착 노드(방)를 입력하세요: ")
+#
+#     if start_room.startswith('4') and target_room.startswith('4'):
+#         floor = '4층'
+#         room_graph = create_room_graph_4th_floor()
+#     elif start_room.startswith('5') and target_room.startswith('5'):
+#         floor = '5층'
+#         room_graph = create_room_graph_5th_floor()
+#     else:
+#         print("입력한 방이 4층 또는 5층에 속하지 않습니다.")
+#         return
+#
+#     distances, previous = dijkstra(room_graph, start_room)
+#     shortest_path = get_shortest_path(previous, start_room, target_room)
+#
+#     if shortest_path:
+#         print(f"{floor} - {start_room}호에서 {target_room}호까지 최단 거리: {distances[target_room]}")
+#         print("최단 경로:", " -> ".join(shortest_path))
+#     else:
+#         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
+
+
 
 
 def main():
@@ -108,8 +148,25 @@ def main():
     if shortest_path:
         print(f"{floor} - {start_room}호에서 {target_room}호까지 최단 거리: {distances[target_room]}")
         print("최단 경로:", " -> ".join(shortest_path))
+
+        # 경로를 따라 방문하면서 해당 노드를 제거
+        queue = deque(shortest_path)
+        while queue:
+            current_node = queue.popleft()
+            user_input = input(f"{current_node} 방을 방문하셨습니까? (방 번호 입력): ")
+
+            if user_input == current_node:
+                print("방문한 노드:", current_node)
+                if queue:
+                    print("남은 경로:", " -> ".join(queue))
+            else:
+                print("방문하지 않았습니다.")
+                break
     else:
         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
+
+
+
 
 
 if __name__ == "__main__":
