@@ -161,14 +161,14 @@ def main():
                 if len(queue) > 1:
                     if user_input == first_node:
                         next_node = queue[1]
-                        print("남은 경로:", " -> ".join(queue), "다음 노드: ", next_node)
+                        print("현재위치~목적지", " -> ".join(queue), "다음 노드: ", next_node)
                     else:
                         next_node = queue[1]
                         prev_node = passed_node
-                        print("남은 경로:", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
+                        print("현재위치~목적지", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
                 else:
                     prev_node = passed_node
-                    print("남은 경로:", " -> ".join(queue), "이전 노드: ", prev_node)
+                    print("현재위치~목적지:", " -> ".join(queue), "이전 노드: ", prev_node)
                 passed_node = current_node
                 if current_node == shortest_path[-1]:
                     print("도착했습니다!")
