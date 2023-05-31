@@ -97,9 +97,9 @@ def get_shortest_path(previous, start_node, target_node):
         current_node = previous[current_node]
 
     if path[0] != start_node:
-        return deque()  # 시작 노드에서 도착 노드까지의 경로가 없는 경우
+        return ""  # 시작 노드에서 도착 노드까지의 경로가 없는 경우
 
-    return path
+    return " -> ".join(path)  # 경로를 문자열로 변환하여 반환
 
 
 # def main():
@@ -145,10 +145,10 @@ def main():
 
     if shortest_path:
         print(f"{floor} - {start_room}호에서 {target_room}호까지 최단 거리: {distances[target_room]}")
-        print("최단 경로:", " -> ".join(shortest_path))
+        print("최단 경로:", shortest_path)
 
         # 경로를 따라 방문하면서 해당 노드를 제거
-        queue = deque(shortest_path)
+        queue = deque(shortest_path.split(" -> "))
         first_node = queue[0]
         prev_node = None
         next_node = None
@@ -159,19 +159,19 @@ def main():
 
             # 방문해야 하는 강의실과 내 위치가 일치 할 경우
             if user_input == current_node:
-                if len(queue) > 1:  #남은 경로가 한 개 이상일 때
-                    if user_input == first_node:    #현재 위치가 최단 경로의 가장 첫번째 강의실일 때
+                if len(queue) > 1:  # 남은 경로가 한 개 이상일 때
+                    if user_input == first_node:    # 현재 위치가 최단 경로의 가장 첫번째 강의실일 때
                         next_node = queue[1]
                         print("현재위치~목적지", " -> ".join(queue), "다음 노드: ", next_node)
                     else:
                         next_node = queue[1]
                         prev_node = passed_node
                         print("현재위치~목적지", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
-                else:   #남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
+                else:   # 남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
                     prev_node = passed_node
                     print("현재위치~목적지:", " -> ".join(queue), "이전 노드: ", prev_node)
                 passed_node = current_node
-                if current_node == shortest_path[-1]:
+                if current_node == queue[-1]:
                     print("도착했습니다!")
             # 방문해야하는 강의실과 내 위치가 일치하지 않을 경우
             else:

@@ -11,6 +11,7 @@ base_csv_file = 'base.csv'
 def hello():
     return 'It is only calculating Server'
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # 클라이언트로부터 전달된 와이파이 리스트 가져오기
