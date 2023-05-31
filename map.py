@@ -157,21 +157,23 @@ def main():
             current_node = queue[0]
             user_input = input(f"{current_node} 방을 방문하셨습니까? (방 번호 입력): ")
 
+            # 방문해야 하는 강의실과 내 위치가 일치 할 경우
             if user_input == current_node:
-                if len(queue) > 1:
-                    if user_input == first_node:
+                if len(queue) > 1:  #남은 경로가 한 개 이상일 때
+                    if user_input == first_node:    #현재 위치가 최단 경로의 가장 첫번째 강의실일 때
                         next_node = queue[1]
                         print("현재위치~목적지", " -> ".join(queue), "다음 노드: ", next_node)
                     else:
                         next_node = queue[1]
                         prev_node = passed_node
                         print("현재위치~목적지", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
-                else:
+                else:   #남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
                     prev_node = passed_node
                     print("현재위치~목적지:", " -> ".join(queue), "이전 노드: ", prev_node)
                 passed_node = current_node
                 if current_node == shortest_path[-1]:
                     print("도착했습니다!")
+            # 방문해야하는 강의실과 내 위치가 일치하지 않을 경우
             else:
                 print("방문하지 않았습니다.")
                 break
