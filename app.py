@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import joblib, csv
+import joblib, csv, os
 import pandas as pd
 import map
 
@@ -57,9 +57,9 @@ def predict():
     # 예측 결과를 클라이언트에 반환
     return jsonify(response)
 
+
 @app.route('/pathfind', methods=['POST'])
 def pathfind():
-
     data = request.get_json()
     current_location = data.get('currentLocation')
     destination = data.get('destination')
@@ -67,12 +67,24 @@ def pathfind():
     # 최단 경로를 계산하기 위해 map.py의 main 함수 호출
     shortest_path = map.main(current_location, destination)
 
+    # shortest_path가 존재하는 경우
     if shortest_path:
         response = {'shortestPath': shortest_path}
-        return jsonify(response)
-    else:
-        return jsonify({'error': '시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.', 'shortestPath': None})
 
+        # shortest_path를 텍스트 파일로 저장
+        file_path = 'shortest_path.txt'
+
+        # 파일이 이미 존재하는 경우 삭제
+        if os.path.exists(file_path):
+            os.remove(file_path)
+
+        with open(file_path, 'w') as file:
+            file.write(shortest_path)
+
+    else:
+        response = {'error': '시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.', 'shortestPath': None}
+
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
