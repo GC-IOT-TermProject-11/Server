@@ -165,6 +165,7 @@ def get_shortest_path(previous, start_node, target_node):
     return " -> ".join(path)  # 경로를 문자열로 변환하여 반환
 
 
+
 def main(start_room, target_room):
     if start_room.startswith('4') and target_room.startswith('4'):
         floor = '4층'
@@ -197,14 +198,14 @@ def main(start_room, target_room):
             # 방문해야 하는 강의실과 내 위치가 일치 할 경우
             if user_input == current_node:
                 if len(queue) > 1:  # 남은 경로가 한 개 이상일 때
-                    if user_input == first_node:  # 현재 위치가 최단 경로의 가장 첫번째 강의실일 때
+                    if user_input == first_node:    # 현재 위치가 최단 경로의 가장 첫번째 강의실일 때
                         next_node = queue[1]
                         print("현재위치~목적지", " -> ".join(queue), "다음 노드: ", next_node)
                     else:
                         next_node = queue[1]
                         prev_node = passed_node
                         print("현재위치~목적지", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
-                else:  # 남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
+                else:   # 남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
                     prev_node = passed_node
                     print("현재위치~목적지:", " -> ".join(queue), "이전 노드: ", prev_node)
                 passed_node = current_node
@@ -219,7 +220,6 @@ def main(start_room, target_room):
         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
         return None
 
-
 if __name__ == "__main__":
     start_room = input("시작 노드(방)를 입력하세요: ")
     target_room = input("도착 노드(방)를 입력하세요: ")
@@ -229,10 +229,18 @@ if __name__ == "__main__":
     total_distance = 0
     for i in range(0, len(path)):
         if room_graph[path[i]]['is_corner']:
+            # 현재위치가 코너 노드인 경우 현재 노드에서 부터 다음 노드까지의 거리를 total distance로 갱신
+            if i == 0:
+                for adjacent, weight in room_graph[path[i]]['adjacent']:
+                    if adjacent == path[i + 1]:
+                        total_distance += weight
+                break
             for j in range(0, i):
                 for adjacent, weight in room_graph[path[j]]['adjacent']:
                     if adjacent == path[j + 1]:
                         total_distance += weight
-            break
+        break
 
     print(total_distance)
+
+
