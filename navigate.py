@@ -19,6 +19,7 @@ def main(prediction):
     for i in range(0, len(path)):
         if room_graph[path[i]]['is_corner']:
             # 현재위치가 코너 노드인 경우 현재 노드에서 부터 다음 노드까지의 거리를 total distance로 갱신
+            # 방향은 코너노드의 전노드, 다음노드를 통해 판단
             if i == 0:
                 for adjacent, weight in room_graph[path[i]]['adjacent']:
                     if adjacent == path[i + 1]:

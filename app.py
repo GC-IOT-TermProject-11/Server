@@ -134,11 +134,10 @@ def navigate():
 
     path_list = shortest_path.split(' -> ')
 
-    direction = navigate.main(predictions)
     current_location = predictions
     destination = path_list[-1]
 
-    # 최단거리 갱신된 위치를 기반으로 다시 받아오기
+    # 최단 거리 갱신된 위치를 기반으로 다시 받아오기
     new_shortest_path = map.main(current_location, destination)
 
     # 파일이 이미 존재하는 경우 삭제
@@ -148,8 +147,8 @@ def navigate():
     with open(file_path, 'w') as file:
         file.write(new_shortest_path)
 
-    direction = navigate.main(predictions)
-    return direction
+    distance = navigate.main(predictions)
+    return distance
 
 
 if __name__ == '__main__':
