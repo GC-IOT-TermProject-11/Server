@@ -14,7 +14,7 @@ def create_room_graph_4th_floor():
 
     # 방 연결 관계 설정
     rooms['401']['adjacent'].append(('402', 5))  # 401호와 402호를 5m 거리로 연결
-    rooms['401']['adjacent'].append(('435', 4.5))  # 401호와 435호를 4.5m 거리로 연결
+    rooms['401']['adjacent'].append(('435', 8))  # 401호와 435호를 8m 거리로 연결
     rooms['402']['adjacent'].append(('401', 5))  # 402호와 401호를 5m 거리로 연결
     rooms['402']['adjacent'].append(('403', 5))  # 402호와 403호를 5m 거리로 연결
     rooms['403']['adjacent'].append(('402', 5))  # 403호와 402호를 5m 거리로 연결
@@ -86,7 +86,7 @@ def create_room_graph_4th_floor():
     rooms['434']['adjacent'].append(('433', 3.3))  # 434호와 433호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('435', 3.3))  # 434호와 435호를 3.3m 거리로 연결
     rooms['435']['adjacent'].append(('434', 3.3))  # 435호와 434호를 3.3m 거리로 연결
-    rooms['435']['adjacent'].append(('401', 4.5))  # 435호와 401호를 4.5m 거리로 연결
+    rooms['435']['adjacent'].append(('401', 8))  # 435호와 401호를 8m 거리로 연결
 
     # 코너 설정
     rooms['405']['is_corner'] = True
