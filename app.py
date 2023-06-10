@@ -86,7 +86,8 @@ def pathfind():
 
     return jsonify(response)
 
-@app.route('/navigate',method=['POST'])
+
+@app.route('/navigate', method=['POST'])
 def navigate():
     # 클라이언트로부터 전달된 와이파이 리스트 가져오기
     data = request.get_json()
@@ -125,10 +126,30 @@ def navigate():
     predictions = model.predict(X)
     predictions = [str(pred) for pred in predictions]  # 모든 원소를 문자열로 변환
 
+    # 새롭게 현재위치가 갱신이 되면 다시 shortest path를 받아 파일에 다시 쓰기
+    # 현재 위치는 예측값 목적지는 shortest path의 맨 마지막 값
+    file_path = 'shortest_path.txt'
+    with open(file_path, 'r') as file:
+        shortest_path = file.read()
+
+    path_list = shortest_path.split(' -> ')
+
     direction = navigate.main(predictions)
+    current_location = predictions
+    destination = path_list[-1]
 
+    # 최단거리 갱신된 위치를 기반으로 다시 받아오기
+    new_shortest_path = map.main(current_location, destination)
+
+    # 파일이 이미 존재하는 경우 삭제
+    if os.path.exists(file_path):
+        os.remove(file_path)
+    # shortest_path.txt에 새로운 최단 경로 쓰기
+    with open(file_path, 'w') as file:
+        file.write(new_shortest_path)
+
+    direction = navigate.main(predictions)
     return direction
-
 
 
 if __name__ == '__main__':
