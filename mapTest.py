@@ -51,6 +51,7 @@ def create_room_graph_4th_floor():
     rooms['417']['adjacent'].append(('418', 3.3))  # 417호와 418호를 3.3m 거리로 연결
     rooms['418']['adjacent'].append(('417', 3.3))  # 418호와 417호를 3.3m 거리로 연결
     rooms['418']['adjacent'].append(('419', 3.3))  # 418호와 419호를 3.3m 거리로 연결
+    rooms['418']['adjacent'].append(('433', 12.5))  # 418호와 433호를 12.5m 거리로 연결
     rooms['419']['adjacent'].append(('418', 3.3))  # 419호와 418호를 3.3m 거리로 연결
     rooms['419']['adjacent'].append(('420', 6.6))  # 419호와 420호를 6.6m 거리로 연결
     rooms['420']['adjacent'].append(('419', 6.6))  # 420호와 419호를 6.6m 거리로 연결
@@ -80,6 +81,7 @@ def create_room_graph_4th_floor():
     rooms['432']['adjacent'].append(('431', 3.3))  # 432호와 431호를 3.3m 거리로 연결
     rooms['432']['adjacent'].append(('433', 3.3))  # 432호와 433호를 3.3m 거리로 연결
     rooms['433']['adjacent'].append(('432', 3.3))  # 433호와 432호를 3.3m 거리로 연결
+    rooms['433']['adjacent'].append(('418', 12.5))  # 433호와 418호를 12.5m 거리로 연결
     rooms['433']['adjacent'].append(('434', 3.3))  # 433호와 434호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('433', 3.3))  # 434호와 433호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('435', 3.3))  # 434호와 435호를 3.3m 거리로 연결
