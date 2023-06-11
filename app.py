@@ -148,6 +148,7 @@ def navigate():
         file.write(new_shortest_path)
 
     distance = navigate.main(predictions)
+
     return distance
 
 
