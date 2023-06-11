@@ -150,7 +150,9 @@ def navigate():
     distance = navigate.main(predictions)
     direction = navigate.direction(predictions)
 
-    return distance
+    response = {'direction': direction, 'distance': distance}
+
+    return jsonify(response)
 
 
 if __name__ == '__main__':
