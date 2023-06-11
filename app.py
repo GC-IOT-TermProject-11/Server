@@ -150,7 +150,7 @@ def navigate():
     distance = navigate.main(predictions)
     direction = navigate.direction(predictions)
 
-    response = {'direction': direction, 'distance': distance}
+    response = {'direction': direction, 'distance': distance,'predictions': predictions}
 
     return jsonify(response)
 
