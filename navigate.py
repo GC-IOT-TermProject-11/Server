@@ -59,75 +59,53 @@ def direction(prediction):
             if path[1] == '418':
                 if path[0] == '417' and path[2] == '433':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '419' and path[2] == '433':
                     result = '좌회전'
-                    print('좌회전')
                 elif path[0] == '433' and path[2] == '419':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '433' and path[2] == '417':
                     result = '좌회전'
-                    print('좌회전')
             elif path[1] == '425' and path[2] == '426':
                 result = '우회전'
-                print('우회전')
             elif path[1] == '426' and path[2] == '425':
                 result = '좌회전'
-                print('좌회전')
             elif path[1] == '433':
                 if path[0] == '432' and path[2] == '418':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '418' and path[2] == '432':
                     result = '좌회전'
-                    print('좌회전')
                 elif path[0] == '418' and path[2] == '434':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '434' and path[2] == '418':
                     result = '좌회전'
-                    print('좌회전')
             elif path[1] == '405':
                 if path[0] == '404' and path[2] == '412':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '412' and path[2] == '404':
                     result = '좌회전'
-                    print('좌회전')
                 elif path[0] == '412' and path[2] == '406':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '406' and path[2] == '412':
                     result = '좌회전'
-                    print('좌회전')
             elif path[1] == '407':
                 if path[2] == '408':
                     result = '우회전'
-                    print('우회전')
                 elif path[2] == '406':
                     result = '좌회전'
-                    print('좌회전')
             elif path[1] == '411':
                 if path[2] == '412':
                     result = '우회전'
-                    print('우회전')
                 elif path[2] == '410':
                     result = '좌회전'
-                    print('좌회전')
             elif path[1] == '412':
                 if path[0] == '411' and path[2] == '405':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '405' and path[2] == '411':
                     result = '좌회전'
-                    print('좌회전')
                 elif path[0] == '405' and path[2] == '413':
                     result = '우회전'
-                    print('우회전')
                 elif path[0] == '413' and path[2] == '405':
                     result = '좌회전'
-                    print('좌회전')
 
     # # 경로가 2개 이하일 경우 (세 노드를 비교하여 방향 판단 불가)  --> 회전이 없음
     # else:
