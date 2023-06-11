@@ -87,7 +87,7 @@ def pathfind():
     return jsonify(response)
 
 
-@app.route('/navigate', method=['POST'])
+@app.route('/navigate', methods=['POST'])
 def navigate():
     # 클라이언트로부터 전달된 와이파이 리스트 가져오기
     data = request.get_json()

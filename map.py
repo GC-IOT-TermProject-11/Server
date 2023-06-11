@@ -239,7 +239,7 @@ if __name__ == "__main__":
                 for adjacent, weight in room_graph[path[j]]['adjacent']:
                     if adjacent == path[j + 1]:
                         total_distance += weight
-        break
+            break
 
     print(total_distance)
 
