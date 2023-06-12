@@ -14,10 +14,10 @@ def create_room_graph_4th_floor():
 
     # 방 연결 관계 설정
     rooms['401']['adjacent'].append(('402', 5))  # 401호와 402호를 5m 거리로 연결
-    rooms['401']['adjacent'].append(('435', 8))  # 401호와 435호를 8m 거리로 연결
+    rooms['401']['adjacent'].append(('435', 7.5))  # 401호와 435호를 8m 거리로 연결
     rooms['402']['adjacent'].append(('401', 5))  # 402호와 401호를 5m 거리로 연결
-    rooms['402']['adjacent'].append(('403', 5))  # 402호와 403호를 5m 거리로 연결
-    rooms['403']['adjacent'].append(('402', 5))  # 403호와 402호를 5m 거리로 연결
+    rooms['402']['adjacent'].append(('403', 7.5))  # 402호와 403호를 5m 거리로 연결
+    rooms['403']['adjacent'].append(('402', 7.5))  # 403호와 402호를 5m 거리로 연결
     rooms['403']['adjacent'].append(('404', 9.9))  # 403호와 404호를 9.9m 거리로 연결
     rooms['404']['adjacent'].append(('403', 9.9))  # 404호와 403호를 9.9m 거리로 연결
     rooms['404']['adjacent'].append(('405', 9.9))  # 404호와 405호를 9.9m 거리로 연결
@@ -25,27 +25,27 @@ def create_room_graph_4th_floor():
     rooms['405']['adjacent'].append(('406', 9.9))  # 405호와 406호를 9.9m 거리로 연결
     rooms['405']['adjacent'].append(('412', 25))  # 405호와 412호를 25m 거리로 연결
     rooms['406']['adjacent'].append(('405', 9.9))  # 406호와 405호를 9.9m 거리로 연결
-    rooms['406']['adjacent'].append(('407', 9.9))  # 406호와 407호를 9.9m 거리로 연결
-    rooms['407']['adjacent'].append(('406', 9.9))  # 407호와 406호를 9.9m 거리로 연결
+    rooms['406']['adjacent'].append(('407', 3.3))  # 406호와 407호를 9.9m 거리로 연결
+    rooms['407']['adjacent'].append(('406', 3.3))  # 407호와 406호를 9.9m 거리로 연결
     rooms['407']['adjacent'].append(('408', 6.6))  # 407호와 408호를 6.6m 거리로 연결
     rooms['408']['adjacent'].append(('407', 6.6))  # 408호와 407호를 6.6m 거리로 연결
     rooms['408']['adjacent'].append(('409', 6.6))  # 408호와 409호를 6.6m 거리로 연결
     rooms['409']['adjacent'].append(('408', 6.6))  # 409호와 408호를 6.6m 거리로 연결
     rooms['409']['adjacent'].append(('410', 6.6))  # 409호와 410호를 6.6m 거리로 연결
     rooms['410']['adjacent'].append(('409', 6.6))  # 410호와 409호를 6.6m 거리로 연결
-    rooms['410']['adjacent'].append(('411', 2.5))  # 410호와 411호를 2.5m 거리로 연결
-    rooms['411']['adjacent'].append(('410', 2.5))  # 411호와 410호를 2.5m 거리로 연결
-    rooms['411']['adjacent'].append(('412', 9.9))  # 411호와 412호를 9.9m 거리로 연결
+    rooms['410']['adjacent'].append(('411', 3.3))  # 410호와 411호를 2.5m 거리로 연결
+    rooms['411']['adjacent'].append(('410', 3.3))  # 411호와 410호를 2.5m 거리로 연결
+    rooms['411']['adjacent'].append(('412', 4.5))  # 411호와 412호를 9.9m 거리로 연결
     rooms['412']['adjacent'].append(('405', 25))  # 412호와 405호를 25m 거리로 연결
-    rooms['412']['adjacent'].append(('411', 9.9))  # 412호와 411호를 9.9m 거리로 연결
+    rooms['412']['adjacent'].append(('411', 4.5))  # 412호와 411호를 9.9m 거리로 연결
     rooms['412']['adjacent'].append(('413', 9.9))  # 412호와 413호를 9.9m 거리로 연결
     rooms['413']['adjacent'].append(('412', 9.9))  # 413호와 412호를 9.9m 거리로 연결
     rooms['413']['adjacent'].append(('414', 9.9))  # 413호와 414호를 9.9m 거리로 연결
     rooms['414']['adjacent'].append(('413', 9.9))  # 414호와 413호를 9.9m 거리로 연결
     rooms['414']['adjacent'].append(('415', 9.9))  # 414호와 415호를 9.9m 거리로 연결
     rooms['415']['adjacent'].append(('414', 9.9))  # 415호와 414호를 9.9m 거리로 연결
-    rooms['415']['adjacent'].append(('416', 2))  # 415호와 416호를 2m 거리로 연결
-    rooms['416']['adjacent'].append(('415', 2))  # 416호와 415호를 2m 거리로 연결
+    rooms['415']['adjacent'].append(('416', 5))  # 415호와 416호를 2m 거리로 연결
+    rooms['416']['adjacent'].append(('415', 5))  # 416호와 415호를 2m 거리로 연결
     rooms['416']['adjacent'].append(('417', 3.3))  # 416호와 417호를 3.3m 거리로 연결
     rooms['417']['adjacent'].append(('416', 3.3))  # 417호와 416호를 3.3m 거리로 연결
     rooms['417']['adjacent'].append(('418', 3.3))  # 417호와 418호를 3.3m 거리로 연결
@@ -53,10 +53,10 @@ def create_room_graph_4th_floor():
     rooms['418']['adjacent'].append(('419', 3.3))  # 418호와 419호를 3.3m 거리로 연결
     rooms['418']['adjacent'].append(('433', 12.5))  # 418호와 433호를 12.5m 거리로 연결
     rooms['419']['adjacent'].append(('418', 3.3))  # 419호와 418호를 3.3m 거리로 연결
-    rooms['419']['adjacent'].append(('420', 6.6))  # 419호와 420호를 6.6m 거리로 연결
-    rooms['420']['adjacent'].append(('419', 6.6))  # 420호와 419호를 6.6m 거리로 연결
-    rooms['420']['adjacent'].append(('421', 6.6))  # 420호와 421호를 6.6m 거리로 연결
-    rooms['421']['adjacent'].append(('420', 6.6))  # 421호와 420호를 6.6m 거리로 연결
+    rooms['419']['adjacent'].append(('420', 3.3))  # 419호와 420호를 6.6m 거리로 연결
+    rooms['420']['adjacent'].append(('419', 3.3))  # 420호와 419호를 6.6m 거리로 연결
+    rooms['420']['adjacent'].append(('421', 3.3))  # 420호와 421호를 6.6m 거리로 연결
+    rooms['421']['adjacent'].append(('420', 3.3))  # 421호와 420호를 6.6m 거리로 연결
     rooms['421']['adjacent'].append(('422', 3.3))  # 421호와 422호를 3.3m 거리로 연결
     rooms['422']['adjacent'].append(('421', 3.3))  # 422호와 421호를 3.3m 거리로 연결
     rooms['422']['adjacent'].append(('423', 3.3))  # 422호와 423호를 3.3m 거리로 연결
@@ -86,7 +86,7 @@ def create_room_graph_4th_floor():
     rooms['434']['adjacent'].append(('433', 3.3))  # 434호와 433호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('435', 3.3))  # 434호와 435호를 3.3m 거리로 연결
     rooms['435']['adjacent'].append(('434', 3.3))  # 435호와 434호를 3.3m 거리로 연결
-    rooms['435']['adjacent'].append(('401', 8))  # 435호와 401호를 8m 거리로 연결
+    rooms['435']['adjacent'].append(('401', 7.5))  # 435호와 401호를 8m 거리로 연결
 
     # 코너 설정
     rooms['405']['is_corner'] = True
@@ -106,19 +106,89 @@ def create_room_graph_5th_floor():
 
     # 방 노드 생성
     for i in range(501, 533):
-        rooms[str(i)] = []
+        rooms[str(i)] = {
+            'adjacent': [],
+            'is_corner': False  # 코너 여부를 나타내는 변수
+        }
 
     # 방 연결 관계 설정
-    for i in range(501, 532):
-        rooms[str(i)].append((str(i + 1), 1))  # 바로 다음 호수와 거리 1로 연결
-        rooms[str(i + 1)].append((str(i), 1))  # 다음 호수에서도 거꾸로 연결
+    rooms['501']['adjacent'].append(('502', 5))
+    rooms['501']['adjacent'].append(('532', 7.5))
+    rooms['502']['adjacent'].append(('501', 5))
+    rooms['502']['adjacent'].append(('503', 7.5))
+    rooms['503']['adjacent'].append(('502', 7.5))
+    rooms['503']['adjacent'].append(('504', 9.9))
+    rooms['504']['adjacent'].append(('503', 9.9))
+    rooms['504']['adjacent'].append(('505', 9.9))
+    rooms['505']['adjacent'].append(('504', 9.9))
+    rooms['505']['adjacent'].append(('506', 9.9))
+    rooms['505']['adjacent'].append(('512', 25))
+    rooms['506']['adjacent'].append(('505', 9.9))
+    rooms['506']['adjacent'].append(('507', 3.3))
+    rooms['507']['adjacent'].append(('506', 3.3))
+    rooms['507']['adjacent'].append(('508', 6.6))
+    rooms['508']['adjacent'].append(('507', 6.6))
+    rooms['508']['adjacent'].append(('509', 6.6))
+    rooms['509']['adjacent'].append(('508', 6.6))
+    rooms['509']['adjacent'].append(('510', 6.6))
+    rooms['510']['adjacent'].append(('509', 6.6))
+    rooms['510']['adjacent'].append(('511', 3.3))
+    rooms['511']['adjacent'].append(('510', 3.3))
+    rooms['511']['adjacent'].append(('512', 4.5))
+    rooms['512']['adjacent'].append(('505', 25))
+    rooms['512']['adjacent'].append(('511', 4.5))
+    rooms['512']['adjacent'].append(('513', 6.6))
+    rooms['513']['adjacent'].append(('512', 6.6))
+    rooms['513']['adjacent'].append(('514', 5))
+    rooms['514']['adjacent'].append(('513', 5))
+    rooms['514']['adjacent'].append(('515', 5))
+    rooms['515']['adjacent'].append(('514', 5))
+    rooms['515']['adjacent'].append(('516', 5))
+    rooms['516']['adjacent'].append(('515', 5))
+    rooms['516']['adjacent'].append(('517', 3.3))
+    rooms['517']['adjacent'].append(('516', 3.3))
+    rooms['517']['adjacent'].append(('518', 5))
+    rooms['518']['adjacent'].append(('517', 5))
+    rooms['518']['adjacent'].append(('519', 6.6))
+    rooms['519']['adjacent'].append(('518', 6.6))
+    rooms['519']['adjacent'].append(('520', 5))
+    rooms['520']['adjacent'].append(('519', 5))
+    rooms['520']['adjacent'].append(('521', 5))
+    rooms['521']['adjacent'].append(('520', 5))
+    rooms['520']['adjacent'].append(('531', 12.5))
+    rooms['531']['adjacent'].append(('520', 12.5))
+    rooms['521']['adjacent'].append(('522', 5))
+    rooms['522']['adjacent'].append(('521', 5))
+    rooms['522']['adjacent'].append(('523', 5))
+    rooms['523']['adjacent'].append(('522', 5))
+    rooms['523']['adjacent'].append(('524', 5))
+    rooms['524']['adjacent'].append(('523', 5))
+    rooms['524']['adjacent'].append(('525', 5))
+    rooms['525']['adjacent'].append(('524', 5))
+    rooms['525']['adjacent'].append(('526', 3.3))
+    rooms['526']['adjacent'].append(('525', 3.3))
+    rooms['526']['adjacent'].append(('527', 5))
+    rooms['527']['adjacent'].append(('526', 5))
+    rooms['527']['adjacent'].append(('528', 5))
+    rooms['528']['adjacent'].append(('527', 5))
+    rooms['528']['adjacent'].append(('529', 5))
+    rooms['529']['adjacent'].append(('528', 5))
+    rooms['529']['adjacent'].append(('530', 5))
+    rooms['530']['adjacent'].append(('529', 5))
+    rooms['530']['adjacent'].append(('531', 5))
+    rooms['531']['adjacent'].append(('530', 5))
+    rooms['531']['adjacent'].append(('532', 5))
+    rooms['532']['adjacent'].append(('531', 5))
 
-    rooms['532'].append(('501', 1))
-    rooms['501'].append(('532', 1))
-    rooms['531'].append(('518', 2))
-    rooms['518'].append(('531', 2))
-    rooms['505'].append(('512', 3))
-    rooms['512'].append(('505', 3))
+    # 코너 설정
+    rooms['505']['is_corner'] = True
+    rooms['507']['is_corner'] = True
+    rooms['511']['is_corner'] = True
+    rooms['512']['is_corner'] = True
+    rooms['520']['is_corner'] = True
+    rooms['525']['is_corner'] = True
+    rooms['526']['is_corner'] = True
+    rooms['531']['is_corner'] = True
 
     return rooms
 
@@ -165,7 +235,6 @@ def get_shortest_path(previous, start_node, target_node):
     return " -> ".join(path)  # 경로를 문자열로 변환하여 반환
 
 
-
 def main(start_room, target_room):
     if start_room.startswith('4') and target_room.startswith('4'):
         floor = '4층'
@@ -198,14 +267,14 @@ def main(start_room, target_room):
             # 방문해야 하는 강의실과 내 위치가 일치 할 경우
             if user_input == current_node:
                 if len(queue) > 1:  # 남은 경로가 한 개 이상일 때
-                    if user_input == first_node:    # 현재 위치가 최단 경로의 가장 첫번째 강의실일 때
+                    if user_input == first_node:  # 현재 위치가 최단 경로의 가장 첫번째 강의실일 때
                         next_node = queue[1]
                         print("현재위치~목적지", " -> ".join(queue), "다음 노드: ", next_node)
                     else:
                         next_node = queue[1]
                         prev_node = passed_node
                         print("현재위치~목적지", " -> ".join(queue), "이전 노드: ", prev_node, " 다음 노드: ", next_node)
-                else:   # 남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
+                else:  # 남은 경로가 마지막 경로 즉, 목적지 하나만 남았을 때
                     prev_node = passed_node
                     print("현재위치~목적지:", " -> ".join(queue), "이전 노드: ", prev_node)
                 passed_node = current_node
@@ -219,6 +288,7 @@ def main(start_room, target_room):
     else:
         print("시작 노드에서 도착 노드까지 경로가 존재하지 않습니다.")
         return None
+
 
 if __name__ == "__main__":
     start_room = input("시작 노드(방)를 입력하세요: ")
@@ -240,7 +310,6 @@ if __name__ == "__main__":
                     if adjacent == path[j + 1]:
                         total_distance += weight
             break
-
 
     result = '직진'
     # 경로가 2개보다 많을 때 (세 노드를 비교하여 방향 판단 가능)
@@ -297,8 +366,5 @@ if __name__ == "__main__":
                 elif path[0] == '413' and path[2] == '405':
                     result = '좌회전'
 
-
     print(total_distance)
     print(result)
-
-

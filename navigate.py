@@ -10,9 +10,13 @@ def distance(prediction):
     # 문자열로 저장된 경로를 리스트에 저장
     path = shortest_path.split(' -> ')
 
-    room_graph = map.create_room_graph_4th_floor()
+    if str(path[0]).startswith('4'):
+        room_graph = map.create_room_graph_4th_floor()
+    elif str(path[0]).startswith('5'):
+        room_graph = map.create_room_graph_5th_floor()
 
     total_distance = 0
+
     for i in range(0, len(path)):
         if room_graph[path[i]]['is_corner']:
             # 현재위치가 코너 노드인 경우 현재 노드에서 부터 다음 노드까지의 거리를 total distance로 갱신
@@ -41,8 +45,10 @@ def direction(prediction):
 
     # 문자열로 저장된 경로를 리스트에 저장
     path = shortest_path.split(' -> ')
-
-    room_graph = map.create_room_graph_4th_floor()
+    if str(path[0]).startswith('4'):
+        room_graph = map.create_room_graph_4th_floor()
+    elif str(path[0]).startswith('5'):
+        room_graph = map.create_room_graph_5th_floor()
 
     result = '직진'
 
