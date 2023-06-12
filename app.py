@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib, csv, os
 import pandas as pd
 import map
+import navigate
 
 app = Flask(__name__)
 model = joblib.load('model.joblib')
@@ -24,7 +25,6 @@ def predict():
     for wifi in wifi_list:
         bssid = wifi.get('BSSID')
         rssi = wifi.get('RSSI')
-        app.logger.info('BSSID: %s, RSSI: %s', bssid, rssi)  # 클라이언트에서 받은 값을 로그로 출력
         input_data.append([bssid, rssi])
 
     with open('test.csv', 'w') as file:
@@ -134,8 +134,8 @@ def navigate():
 
     path_list = shortest_path.split(' -> ')
 
-    current_location = predictions
-    destination = path_list[-1]
+    current_location = ' '.join(predictions)
+    destination = str(path_list[-1])
 
     # 최단 거리 갱신된 위치를 기반으로 다시 받아오기
     new_shortest_path = map.main(current_location, destination)
@@ -147,7 +147,7 @@ def navigate():
     with open(file_path, 'w') as file:
         file.write(new_shortest_path)
 
-    distance = navigate.main(predictions)
+    distance = navigate.distance(predictions)
     direction = navigate.direction(predictions)
 
     response = {'direction': direction, 'distance': distance,'predictions': predictions}

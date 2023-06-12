@@ -1,10 +1,7 @@
-from collections import deque
-
-import mapTest
 import map
 
 
-def main(prediction):
+def distance(prediction):
     file_path = 'shortest_path.txt'
 
     with open(file_path, 'r') as file:
