@@ -137,6 +137,11 @@ def navigate():
     current_location = ' '.join(predictions)
     destination = str(path_list[-1])
 
+    if current_location == destination:
+        # 현재 위치와 목적지가 같으면 "finish"로 response
+        response = {'response': 'finish'}
+        return jsonify(response)
+
     # 최단 거리 갱신된 위치를 기반으로 다시 받아오기
     new_shortest_path = map.main(current_location, destination)
 
