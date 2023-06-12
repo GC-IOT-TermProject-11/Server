@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import joblib, csv, os
 import pandas as pd
 import map
-import navigate
+import navigate as navigation
 
 app = Flask(__name__)
 model = joblib.load('model.joblib')
@@ -147,8 +147,8 @@ def navigate():
     with open(file_path, 'w') as file:
         file.write(new_shortest_path)
 
-    distance = navigate.distance(predictions)
-    direction = navigate.direction(predictions)
+    distance = navigation.distance(predictions)
+    direction = navigation.direction(predictions)
 
     response = {'direction': direction, 'distance': distance,'predictions': predictions}
 
