@@ -55,6 +55,9 @@ def direction(prediction):
         # path[1]이 다음 노드
         # path[2]가 다다음 노드
 
+        if len(path) == 1:
+            return result
+
         # 경로가 2개보다 많을 때 (세 노드를 비교하여 방향 판단 가능)
         if room_graph[path[1]]['is_corner']:
             if len(path) > 2:
@@ -115,6 +118,9 @@ def direction(prediction):
         # path[0]이 현 위치
         # path[1]이 다음 노드
         # path[2]가 다다음 노드
+
+        if len(path) == 1:
+            return result
 
         # 경로가 2개보다 많을 때 (세 노드를 비교하여 방향 판단 가능)
         if room_graph[path[1]]['is_corner']:
