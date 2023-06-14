@@ -24,7 +24,10 @@ def create_room_graph_4th_floor():
         'adjacent': [],
         'is_corner': False  # 코너 여부를 나타내는 변수
     }
-
+    rooms['4야외 테라스'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
     # 방 연결 관계 설정
     rooms['401']['adjacent'].append(('402', 5))  # 401호와 402호를 5m 거리로 연결
     rooms['401']['adjacent'].append(('435', 7.5))  # 401호와 435호를 8m 거리로 연결
