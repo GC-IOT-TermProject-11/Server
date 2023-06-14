@@ -12,6 +12,19 @@ def create_room_graph_4th_floor():
             'is_corner': False  # 코너 여부를 나타내는 변수
         }
 
+    rooms['4엘레베이터2'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['4엘레베이터3'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['4아르테크네'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+
     # 방 연결 관계 설정
     rooms['401']['adjacent'].append(('402', 5))  # 401호와 402호를 5m 거리로 연결
     rooms['401']['adjacent'].append(('435', 7.5))  # 401호와 435호를 8m 거리로 연결
@@ -124,6 +137,26 @@ def create_room_graph_5th_floor():
             'adjacent': [],
             'is_corner': False  # 코너 여부를 나타내는 변수
         }
+    rooms['5엘레베이터1'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['5엘레베이터2'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['5엘레베이터3'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['502쪽 큐브'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
+    rooms['515쪽 큐브'] = {
+        'adjacent': [],
+        'is_corner': False  # 코너 여부를 나타내는 변수
+    }
 
     # 방 연결 관계 설정
     rooms['501']['adjacent'].append(('502', 5))
