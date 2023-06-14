@@ -62,35 +62,35 @@ def direction(prediction):
         if room_graph[path[1]]['is_corner']:
             if len(path) > 2:
                 if path[1] == '418':
-                    if path[0] == '417' and path[2] == '433':
+                    if path[0] == '417' and path[2] == '4엘레베이터2':
                         result = '우회전'
-                    elif path[0] == '419' and path[2] == '433':
+                    elif path[0] == '419' and path[2] == '4엘레베이터2':
                         result = '좌회전'
-                    elif path[0] == '433' and path[2] == '419':
+                    elif path[0] == '4엘레베이터2' and path[2] == '419':
                         result = '우회전'
-                    elif path[0] == '433' and path[2] == '417':
+                    elif path[0] == '4엘레베이터2' and path[2] == '417':
                         result = '좌회전'
-                elif path[1] == '425' and path[2] == '426':
+                elif path[1] == '4아르테크네' and path[2] == '426':
                     result = '우회전'
-                elif path[1] == '426' and path[2] == '425':
+                elif path[1] == '426' and path[2] == '4아르테크네':
                     result = '좌회전'
                 elif path[1] == '433':
-                    if path[0] == '432' and path[2] == '418':
+                    if path[0] == '432' and path[2] == '4엘레베이터2':
                         result = '우회전'
-                    elif path[0] == '418' and path[2] == '432':
+                    elif path[0] == '4엘레베이터2' and path[2] == '432':
                         result = '좌회전'
-                    elif path[0] == '418' and path[2] == '434':
+                    elif path[0] == '4엘레베이터2' and path[2] == '434':
                         result = '우회전'
-                    elif path[0] == '434' and path[2] == '418':
+                    elif path[0] == '434' and path[2] == '4엘레베이터2':
                         result = '좌회전'
                 elif path[1] == '405':
-                    if path[0] == '404' and path[2] == '412':
+                    if path[0] == '404' and path[2] == '4엘레베이터3':
                         result = '우회전'
-                    elif path[0] == '412' and path[2] == '404':
+                    elif path[0] == '4엘레베이터3' and path[2] == '404':
                         result = '좌회전'
-                    elif path[0] == '412' and path[2] == '406':
+                    elif path[0] == '4엘레베이터3' and path[2] == '406':
                         result = '우회전'
-                    elif path[0] == '406' and path[2] == '412':
+                    elif path[0] == '406' and path[2] == '4엘레베이터3':
                         result = '좌회전'
                 elif path[1] == '407':
                     if path[2] == '408':
@@ -103,15 +103,41 @@ def direction(prediction):
                     elif path[2] == '410':
                         result = '좌회전'
                 elif path[1] == '412':
-                    if path[0] == '411' and path[2] == '405':
+                    if path[0] == '411' and path[2] == '4엘레베이터3':
                         result = '우회전'
-                    elif path[0] == '405' and path[2] == '411':
+                    elif path[0] == '4엘레베이터3' and path[2] == '411':
                         result = '좌회전'
-                    elif path[0] == '405' and path[2] == '413':
+                    elif path[0] == '4엘레베이터3' and path[2] == '413':
                         result = '우회전'
-                    elif path[0] == '413' and path[2] == '405':
+                    elif path[0] == '413' and path[2] == '4엘레베이터3':
                         result = '좌회전'
-
+                elif path[1] == '4엘레베이터2':
+                    if path[0] == '4야외 테라스' and path[2] == '433':
+                        result = '우회전'
+                    elif path[0] == '433' and path[2] == '4야외 테라스':
+                        result = '좌회전'
+                    elif path[0] == '418' and path[2] == '4야외 테라스':
+                        result = '우회전'
+                    elif path[0] == '4야외 테라스' and path[2] == '418':
+                        result = '좌회전'
+                elif path[1] == '4엘레베이터3':
+                    if path[0] == '410' and path[2] == '405':
+                        result = '우회전'
+                    elif path[0] == '405' and path[2] == '410':
+                        result = '좌회전'
+                    elif path[0] == '412' and path[2] == '410':
+                        result = '우회전'
+                    elif path[0] == '410' and path[2] == '412':
+                        result = '좌회전'
+                elif path[1] == '410':
+                    if path[0] == '409' and path[2] == '4엘레베이터3':
+                        result = '우회전'
+                    elif path[0] == '4엘레베이터3' and path[2] == '409':
+                        result = '좌회전'
+                    elif path[0] == '4엘레베이터3' and path[2] == '411':
+                        result = '우회전'
+                    elif path[0] == '411' and path[2] == '4엘레베이터3':
+                        result = '좌회전'
     elif str(path[0]).startswith('5'):
         room_graph = map.create_room_graph_5th_floor()
 
@@ -126,35 +152,35 @@ def direction(prediction):
         if room_graph[path[1]]['is_corner']:
             if len(path) > 2:
                 if path[1] == '520':
-                    if path[0] == '531' and path[2] == '521':
+                    if path[0] == '5엘레베이터2' and path[2] == '521':
                         result = '우회전'
-                    elif path[0] == '531' and path[2] == '519':
+                    elif path[0] == '5엘레베이터2' and path[2] == '519':
                         result = '좌회전'
-                    elif path[0] == '519' and path[2] == '531':
+                    elif path[0] == '519' and path[2] == '5엘레베이터2':
                         result = '우회전'
-                    elif path[0] == '521' and path[2] == '531':
+                    elif path[0] == '521' and path[2] == '5엘레베이터2':
                         result = '좌회전'
-                elif path[1] == '525' and path[2] == '526':
+                elif path[1] == '525' and path[2] == '5엘레베이터1':
                     result = '우회전'
-                elif path[1] == '526' and path[2] == '525':
+                elif path[1] == '5엘레베이터1' and path[2] == '525':
                     result = '좌회전'
                 elif path[1] == '531':
-                    if path[0] == '520' and path[2] == '532':
+                    if path[0] == '5엘레베이터2' and path[2] == '532':
                         result = '우회전'
-                    elif path[0] == '520' and path[2] == '530':
+                    elif path[0] == '5엘레베이터2' and path[2] == '530':
                         result = '좌회전'
-                    elif path[0] == '530' and path[2] == '520':
+                    elif path[0] == '530' and path[2] == '5엘레베이터2':
                         result = '우회전'
-                    elif path[0] == '532' and path[2] == '520':
+                    elif path[0] == '532' and path[2] == '5엘레베이터2':
                         result = '좌회전'
                 elif path[1] == '505':
-                    if path[0] == '504' and path[2] == '512':
+                    if path[0] == '504' and path[2] == '5엘레베이터3':
                         result = '우회전'
-                    elif path[0] == '512' and path[2] == '504':
+                    elif path[0] == '5엘레베이터3' and path[2] == '504':
                         result = '좌회전'
-                    elif path[0] == '512' and path[2] == '506':
+                    elif path[0] == '512' and path[2] == '5엘레베이터3':
                         result = '우회전'
-                    elif path[0] == '506' and path[2] == '512':
+                    elif path[0] == '5엘레베이터3' and path[2] == '512':
                         result = '좌회전'
                 elif path[1] == '507':
                     if path[2] == '508':
@@ -167,13 +193,48 @@ def direction(prediction):
                     elif path[2] == '510':
                         result = '좌회전'
                 elif path[1] == '512':
-                    if path[0] == '511' and path[2] == '505':
+                    if path[0] == '511' and path[2] == '5엘레베이터3':
                         result = '우회전'
-                    elif path[0] == '505' and path[2] == '511':
+                    elif path[0] == '5엘레베이터3' and path[2] == '511':
                         result = '좌회전'
-                    elif path[0] == '505' and path[2] == '513':
+                    elif path[0] == '5엘레베이터3' and path[2] == '513':
                         result = '우회전'
-                    elif path[0] == '513' and path[2] == '505':
+                    elif path[0] == '513' and path[2] == '5엘레베이터3':
                         result = '좌회전'
-
+                elif path[1] == '510':
+                    if path[0] == '509' and path[2] == '5엘레베이터3':
+                        result = '우회전'
+                    elif path[0] == '5엘레베이터3' and path[2] == '509':
+                        result = '좌회전'
+                    elif path[0] == '5엘레베이터3' and path[2] == '511':
+                        result = '우회전'
+                    elif path[0] == '511' and path[2] == '5엘레베이터3':
+                        result = '좌회전'
+                elif path[1] == '503':
+                    if path[0] == '502쪽 큐브' and path[2] == '504':
+                        result = '우회전'
+                    elif path[0] == '504' and path[2] == '502쪽 큐브':
+                        result = '좌회전'
+                    elif path[0] == '502' and path[2] == '502쪽 큐브':
+                        result = '우회전'
+                    elif path[0] == '502쪽 큐브' and path[2] == '502':
+                        result = '좌회전'
+                elif path[1] == '515':
+                    if path[0] == '515쪽 큐브' and path[2] == '516':
+                        result = '우회전'
+                    elif path[0] == '516' and path[2] == '515쪽 큐브':
+                        result = '좌회전'
+                    elif path[0] == '514' and path[2] == '515쪽 큐브':
+                        result = '우회전'
+                    elif path[0] == '515쪽 큐브' and path[2] == '514':
+                        result = '좌회전'
+                elif path[1] == '5엘레베이터3':
+                    if path[0] == '510' and path[2] == '505':
+                        result = '우회전'
+                    elif path[0] == '505' and path[2] == '510':
+                        result = '좌회전'
+                    elif path[0] == '512' and path[2] == '510':
+                        result = '우회전'
+                    elif path[0] == '510' and path[2] == '512':
+                        result = '좌회전'
     return result

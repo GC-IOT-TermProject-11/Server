@@ -23,7 +23,6 @@ def create_room_graph_4th_floor():
     rooms['404']['adjacent'].append(('405', 9.9))  # 404호와 405호를 9.9m 거리로 연결
     rooms['405']['adjacent'].append(('404', 9.9))  # 405호와 404호를 9.9m 거리로 연결
     rooms['405']['adjacent'].append(('406', 9.9))  # 405호와 406호를 9.9m 거리로 연결
-    rooms['405']['adjacent'].append(('412', 25))  # 405호와 412호를 25m 거리로 연결
     rooms['406']['adjacent'].append(('405', 9.9))  # 406호와 405호를 9.9m 거리로 연결
     rooms['406']['adjacent'].append(('407', 3.3))  # 406호와 407호를 9.9m 거리로 연결
     rooms['407']['adjacent'].append(('406', 3.3))  # 407호와 406호를 9.9m 거리로 연결
@@ -36,7 +35,6 @@ def create_room_graph_4th_floor():
     rooms['410']['adjacent'].append(('411', 3.3))  # 410호와 411호를 2.5m 거리로 연결
     rooms['411']['adjacent'].append(('410', 3.3))  # 411호와 410호를 2.5m 거리로 연결
     rooms['411']['adjacent'].append(('412', 4.5))  # 411호와 412호를 9.9m 거리로 연결
-    rooms['412']['adjacent'].append(('405', 25))  # 412호와 405호를 25m 거리로 연결
     rooms['412']['adjacent'].append(('411', 4.5))  # 412호와 411호를 9.9m 거리로 연결
     rooms['412']['adjacent'].append(('413', 9.9))  # 412호와 413호를 9.9m 거리로 연결
     rooms['413']['adjacent'].append(('412', 9.9))  # 413호와 412호를 9.9m 거리로 연결
@@ -51,7 +49,6 @@ def create_room_graph_4th_floor():
     rooms['417']['adjacent'].append(('418', 3.3))  # 417호와 418호를 3.3m 거리로 연결
     rooms['418']['adjacent'].append(('417', 3.3))  # 418호와 417호를 3.3m 거리로 연결
     rooms['418']['adjacent'].append(('419', 3.3))  # 418호와 419호를 3.3m 거리로 연결
-    rooms['418']['adjacent'].append(('433', 12.5))  # 418호와 433호를 12.5m 거리로 연결
     rooms['419']['adjacent'].append(('418', 3.3))  # 419호와 418호를 3.3m 거리로 연결
     rooms['419']['adjacent'].append(('420', 3.3))  # 419호와 420호를 6.6m 거리로 연결
     rooms['420']['adjacent'].append(('419', 3.3))  # 420호와 419호를 6.6m 거리로 연결
@@ -65,8 +62,10 @@ def create_room_graph_4th_floor():
     rooms['424']['adjacent'].append(('423', 3.3))  # 424호와 423호를 3.3m 거리로 연결
     rooms['424']['adjacent'].append(('425', 3.3))  # 424호와 425호를 3.3m 거리로 연결
     rooms['425']['adjacent'].append(('424', 3.3))  # 425호와 424호를 3.3m 거리로 연결
-    rooms['425']['adjacent'].append(('426', 3.3))  # 425호와 426호를 3.3m 거리로 연결
-    rooms['426']['adjacent'].append(('425', 3.3))  # 426호와 425호를 3.3m 거리로 연결
+    rooms['425']['adjacent'].append(('4아르테크네', 3.3))  # 425호와 426호를 3.3m 거리로 연결
+    rooms['4아르테크네']['adjacent'].append(('425', 3.3))  # 426호와 425호를 3.3m 거리로 연결
+    rooms['4아르테크네']['adjacent'].append(('426', 3.3))  # 425호와 426호를 3.3m 거리로 연결
+    rooms['426']['adjacent'].append(('4아르테크네', 3.3))  # 426호와 425호를 3.3m 거리로 연결
     rooms['426']['adjacent'].append(('427', 3.3))  # 426호와 427호를 3.3m 거리로 연결
     rooms['427']['adjacent'].append(('426', 3.3))  # 427호와 426호를 3.3m 거리로 연결
     rooms['427']['adjacent'].append(('428', 3.3))  # 427호와 428호를 3.3m 거리로 연결
@@ -81,23 +80,38 @@ def create_room_graph_4th_floor():
     rooms['432']['adjacent'].append(('431', 3.3))  # 432호와 431호를 3.3m 거리로 연결
     rooms['432']['adjacent'].append(('433', 3.3))  # 432호와 433호를 3.3m 거리로 연결
     rooms['433']['adjacent'].append(('432', 3.3))  # 433호와 432호를 3.3m 거리로 연결
-    rooms['433']['adjacent'].append(('418', 12.5))  # 433호와 418호를 12.5m 거리로 연결
     rooms['433']['adjacent'].append(('434', 3.3))  # 433호와 434호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('433', 3.3))  # 434호와 433호를 3.3m 거리로 연결
     rooms['434']['adjacent'].append(('435', 3.3))  # 434호와 435호를 3.3m 거리로 연결
     rooms['435']['adjacent'].append(('434', 3.3))  # 435호와 434호를 3.3m 거리로 연결
     rooms['435']['adjacent'].append(('401', 7.5))  # 435호와 401호를 8m 거리로 연결
+    rooms['418']['adjacent'].append(('4엘레베이터2', 6.2))  # 엘레베이터2와 418연결
+    rooms['4엘레베이터2']['adjacent'].append(('418', 6.2))
+    rooms['433']['adjacent'].append(('4엘레베이터2', 6.2))  # 엘레베이터2와 433연결
+    rooms['4엘레베이터2']['adjacent'].append(('433', 6.2))
+    rooms['4야외 테라스']['adjacent'].append(('4엘레베이터2', 6.2))  # 엘레베이터2와 야외 테라스 연결
+    rooms['4엘레베이터2']['adjacent'].append(('4야외 테라스', 6.2))
+
+    # 엘베3
+    rooms['405']['adjacent'].append(('4엘레베이터3', 17))
+    rooms['4엘레베이터3']['adjacent'].append(('405', 17))
+    rooms['412']['adjacent'].append(('4엘레베이터3', 8))
+    rooms['4엘레베이터3']['adjacent'].append(('412', 8))
+    rooms['410']['adjacent'].append(('4엘레베이터3', 8))
+    rooms['4엘레베이터3']['adjacent'].append(('410', 8))
 
     # 코너 설정
     rooms['405']['is_corner'] = True
     rooms['407']['is_corner'] = True
+    rooms['410']['is_corner'] = True
     rooms['411']['is_corner'] = True
     rooms['412']['is_corner'] = True
     rooms['418']['is_corner'] = True
-    rooms['425']['is_corner'] = True
     rooms['426']['is_corner'] = True
     rooms['433']['is_corner'] = True
-
+    rooms['4아르테크네']['is_corner'] = True
+    rooms['4엘레베이터2']['is_corner'] = True
+    rooms['4엘레베이터3']['is_corner'] = True
     return rooms
 
 
@@ -122,7 +136,6 @@ def create_room_graph_5th_floor():
     rooms['504']['adjacent'].append(('505', 9.9))
     rooms['505']['adjacent'].append(('504', 9.9))
     rooms['505']['adjacent'].append(('506', 9.9))
-    rooms['505']['adjacent'].append(('512', 25))
     rooms['506']['adjacent'].append(('505', 9.9))
     rooms['506']['adjacent'].append(('507', 3.3))
     rooms['507']['adjacent'].append(('506', 3.3))
@@ -135,7 +148,6 @@ def create_room_graph_5th_floor():
     rooms['510']['adjacent'].append(('511', 3.3))
     rooms['511']['adjacent'].append(('510', 3.3))
     rooms['511']['adjacent'].append(('512', 4.5))
-    rooms['512']['adjacent'].append(('505', 25))
     rooms['512']['adjacent'].append(('511', 4.5))
     rooms['512']['adjacent'].append(('513', 6.6))
     rooms['513']['adjacent'].append(('512', 6.6))
@@ -155,8 +167,10 @@ def create_room_graph_5th_floor():
     rooms['520']['adjacent'].append(('519', 5))
     rooms['520']['adjacent'].append(('521', 5))
     rooms['521']['adjacent'].append(('520', 5))
-    rooms['520']['adjacent'].append(('531', 12.5))
-    rooms['531']['adjacent'].append(('520', 12.5))
+    rooms['520']['adjacent'].append(('5층엘레베이터2', 5))
+    rooms['5엘레베이터2']['adjacent'].append(('520', 5))
+    rooms['5엘레베이터2']['adjacent'].append(('531', 6.2))
+    rooms['531']['adjacent'].append(('5엘레베이터2', 6.2))
     rooms['521']['adjacent'].append(('522', 5))
     rooms['522']['adjacent'].append(('521', 5))
     rooms['522']['adjacent'].append(('523', 5))
@@ -165,8 +179,10 @@ def create_room_graph_5th_floor():
     rooms['524']['adjacent'].append(('523', 5))
     rooms['524']['adjacent'].append(('525', 5))
     rooms['525']['adjacent'].append(('524', 5))
-    rooms['525']['adjacent'].append(('526', 3.3))
-    rooms['526']['adjacent'].append(('525', 3.3))
+    rooms['525']['adjacent'].append(('5엘레베이터1', 3.3))
+    rooms['5엘레베이터1']['adjacent'].append(('525', 3.3))
+    rooms['526']['adjacent'].append(('5엘레베이터1', 3.3))
+    rooms['5엘레베이터1']['adjacent'].append(('526', 3.3))
     rooms['526']['adjacent'].append(('527', 5))
     rooms['527']['adjacent'].append(('526', 5))
     rooms['527']['adjacent'].append(('528', 5))
@@ -179,8 +195,24 @@ def create_room_graph_5th_floor():
     rooms['531']['adjacent'].append(('530', 5))
     rooms['531']['adjacent'].append(('532', 5))
     rooms['532']['adjacent'].append(('531', 5))
+    rooms['503']['adjacent'].append(('502쪽 큐브', 5))
+    rooms['502쪽 큐브']['adjacent'].append(('503', 5))
+    rooms['502쪽 큐브']['adjacent'].append(('515쪽 큐브', 10))
+    rooms['515쪽 큐브']['adjacent'].append(('502쪽 큐브', 10))
+    rooms['502쪽 큐브']['adjacent'].append(('515', 5))
+    rooms['515']['adjacent'].append(('502쪽 큐브', 5))
+
+    # 엘베3
+    rooms['505']['adjacent'].append(('5엘레베이터3', 17))
+    rooms['5엘레베이터3']['adjacent'].append(('505', 17))
+    rooms['512']['adjacent'].append(('5엘레베이터3', 8))
+    rooms['5엘레베이터3']['adjacent'].append(('512', 8))
+    rooms['510']['adjacent'].append(('5엘레베이터3', 8))
+    rooms['5엘레베이터3']['adjacent'].append(('510', 8))
 
     # 코너 설정
+    rooms['503']['is_corner'] = True
+    rooms['515']['is_corner'] = True
     rooms['505']['is_corner'] = True
     rooms['507']['is_corner'] = True
     rooms['511']['is_corner'] = True
@@ -189,6 +221,8 @@ def create_room_graph_5th_floor():
     rooms['525']['is_corner'] = True
     rooms['526']['is_corner'] = True
     rooms['531']['is_corner'] = True
+    rooms['5엘레베이터1']['is_corner'] = True
+    rooms['5엘레베이터3']['is_corner'] = True
 
     return rooms
 
