@@ -52,7 +52,15 @@ def predict():
     predictions = model.predict(X)
     predictions = [str(pred) for pred in predictions]  # 모든 원소를 문자열로 변환
 
-    response = {'predictions': predictions}
+    converted_predictions = []
+    for pred in predictions:
+        pred_int = int(pred)
+        if (435 < pred_int < 500) or pred_int > 532:
+            converted_predictions.append(convertPredictions(pred_int))
+        else:
+            converted_predictions.append(str(pred_int))
+
+    response = {'predictions': converted_predictions}
 
     # 예측 결과를 클라이언트에 반환
     return jsonify(response)
@@ -126,6 +134,14 @@ def navigate():
     predictions = model.predict(X)
     predictions = [str(pred) for pred in predictions]  # 모든 원소를 문자열로 변환
 
+    converted_predictions = []
+    for pred in predictions:
+        pred_int = int(pred)
+        if (435 < pred_int < 500) or pred_int > 532:
+            converted_predictions.append(convertPredictions(pred_int))
+        else:
+            converted_predictions.append(str(pred_int))
+
     # 새롭게 현재위치가 갱신이 되면 다시 shortest path를 받아 파일에 다시 쓰기
     # 현재 위치는 예측값 목적지는 shortest path의 맨 마지막 값
     file_path = 'shortest_path.txt'
@@ -134,7 +150,7 @@ def navigate():
 
     path_list = shortest_path.split(' -> ')
 
-    current_location = ' '.join(predictions)
+    current_location = ' '.join(converted_predictions)
     destination = str(path_list[-1])
 
     if current_location == destination:
@@ -152,12 +168,35 @@ def navigate():
     with open(file_path, 'w') as file:
         file.write(new_shortest_path)
 
-    distance = navigation.distance(predictions)
-    direction = navigation.direction(predictions)
+    distance = navigation.distance(converted_predictions)
+    direction = navigation.direction(converted_predictions)
 
-    response = {'direction': direction, 'distance': distance,'predictions': predictions}
+    response = {'direction': direction, 'distance': distance, 'predictions': converted_predictions}
 
     return jsonify(response)
+
+
+def convertPredictions(p):
+    if p == 436:
+        return '4아르테크네'
+    elif p == 437:
+        return '4엘레베이터2'
+    elif p == 438:
+        return '4야외 테라스'
+    elif p == 439:
+        return '4엘레베이터3'
+    elif p == 533:
+        return '5엘레베이터1'
+    elif p == 534:
+        return '5엘레베이터2'
+    elif p == 535:
+        return '502쪽 큐브'
+    elif p == 536:
+        return '515쪽 큐브'
+    elif p == 537:
+        return '5엘레베이터3'
+    else:
+        return '오류 발생'
 
 
 if __name__ == '__main__':
